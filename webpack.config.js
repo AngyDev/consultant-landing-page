@@ -2,6 +2,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // This is the main configuration object.
 // Here, you write different options and tell Webpack what to do
@@ -40,12 +41,9 @@ module.exports = {
             // Now we apply rule for images
             test: /\.(png|jpe?g|gif|svg)$/,
             use: [{
-                // Using file-loader for these files
                 loader: "file-loader",
-
-                // In options we can set different things like format
-                // and directory to save
                 options: {
+                    name: '[name].[ext]',
                     outputPath: 'images'
                 }
             }]
@@ -69,6 +67,12 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './index.html'
+        }),
+        // Add this plugin to create a copy of the images folder from src to dist
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./src/images", to: "./images" }
+            ]
         })
 
     ],
