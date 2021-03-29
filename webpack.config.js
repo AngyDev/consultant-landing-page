@@ -30,27 +30,12 @@ module.exports = {
             }
         }, {
             // Apply rule for .sass, .scss or .css files
-            test: /\.(sa|sc|c)ss$/,
+            test: /\.((c|sa|sc)ss)$/i,
 
             // Set loaders to transform files.
             // Loaders are applying from right to left(!)
             // The first loader will be applied after others
-            use: [{ loader: MiniCssExtractPlugin.loader }, {
-                    // This loader resolves url() and @imports inside CSS
-                    loader: "css-loader",
-                },
-                {
-                    // Then we apply postCSS fixes like autoprefixer and minifying
-                    loader: "postcss-loader"
-                },
-                {
-                    // First we transform SASS to standard CSS
-                    loader: "sass-loader",
-                    options: {
-                        implementation: require("sass")
-                    }
-                }
-            ]
+            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
         }, {
             // Now we apply rule for images
             test: /\.(png|jpe?g|gif|svg)$/,
@@ -89,9 +74,7 @@ module.exports = {
     ],
 
     devServer: {
-        contentBase: './dist',
-        compress: true,
-        port: 9000,
+        contentBase: './dist'
     },
 
     // Default mode for Webpack is production.
