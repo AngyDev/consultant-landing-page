@@ -8,8 +8,31 @@
     <title>Document</title>
 </head>
 
-<body>
-    <h1></h1>
+<body class="container">
+    <header class="header__bg mobile-container">
+        <div class="header flex justify-between">
+            <div class="logo flex offset-1">
+                <img src="./images/logo.svg" alt="Logo">
+                <span class="logo__text">Dreammaker</span>
+            </div>
+
+            <div class="menu-btn">
+                <span class="menu-btn__burger"></span>
+            </div>
+
+            <nav class="header__nav flex offset-right-1 col-3">
+                <ul class="nav-menu flex align-center">
+                    <li class="nav-menu__item col-1">Home</li>
+                    <li class="nav-menu__item col-1">About us</li>
+                    <li class="nav-menu__item col-1">Service</li>
+                    <li class="nav-menu__item col-1">Setting</li>
+                    <li class="col-2">
+                        <button class="btn"><span class="btn__text">Contact us</span></button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 </body>
 
 </html>
