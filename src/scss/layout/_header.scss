@@ -1,0 +1,24 @@
+@import 'logo';
+@import 'menu';
+.header__bg {
+    background-color: $header-background-color;
+}
+
+.header__nav {
+    display: none;
+}
+
+@include desktop {
+    .header__bg {
+        background-image: url(../images/header-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@include desktopNavMenu {
+    .header__nav {
+        display: unset;
+        padding-left: 5%;
+    }
+}

@@ -1,0 +1,22 @@
+.menu-btn {
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+}
+
+@include desktop {
+    .nav-menu {
+        width: 100%;
+        list-style-type: none;
+        @include fontPoppins-md;
+        color: $header-text-color;
+        text-align: center;
+        padding: 0;
+    }
+}
+
+@include desktopNavMenu {
+    .menu-btn {
+        display: none;
+    }
+}
