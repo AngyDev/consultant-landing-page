@@ -10,6 +10,7 @@
 .box {
     width: 228px;
     &__img {
+        padding-top: 5%;
         padding-bottom: 21px;
         width: 65px;
         height: 65px;
@@ -34,5 +35,11 @@
     }
     .services__img {
         width: 66.666667%;
+    }
+    .box {
+        &:hover {
+            border: 1px solid #9D9D9D;
+            border-radius: 5px;
+        }
     }
 }
