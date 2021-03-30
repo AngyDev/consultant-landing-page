@@ -7,6 +7,10 @@ body {
     background-color: $body-background-color;
 }
 
+h2 {
+    @include fontPoppins-lg;
+}
+
 .container {
     min-width: 360px;
     max-width: 1440px;
@@ -41,11 +45,15 @@ body {
     flex-direction: row;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .spacing {
     margin: 0;
     border: 0;
     &--sm {
-        padding-bottom: 32px;
+        padding-bottom: $spacer * 2;
     }
 }
 
@@ -69,6 +77,6 @@ body {
         margin-right: 16.666667%;
     }
     .spacing--lg {
-        padding-bottom: 112px;
+        padding-bottom: $spacer * 7;
     }
 }
