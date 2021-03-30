@@ -21,7 +21,7 @@
 }
 
 .header__caption {
-    @include fontPoppins-md;
+    @include fontPoppins-sm;
 }
 
 @include desktop {
