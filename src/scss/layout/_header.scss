@@ -4,8 +4,24 @@
     background-color: $header-background-color;
 }
 
+.header__box {
+    align-items: center;
+}
+
 .header__nav {
     display: none;
+}
+
+.header__text {
+    text-align: center;
+}
+
+.header__title {
+    @include fontDMSerif-lg;
+}
+
+.header__caption {
+    @include fontPoppins-md;
 }
 
 @include desktop {
@@ -13,6 +29,12 @@
         background-image: url(../images/header-bg.png);
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .header__text {
+        text-align: left;
+    }
+    .header__box {
+        align-items: unset;
     }
 }
 
