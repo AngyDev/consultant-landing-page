@@ -14,7 +14,7 @@ body {
 }
 
 .mobile-container {
-    padding: 0 20px;
+    padding: 20px 20px;
 }
 
 .flex {
@@ -27,6 +27,18 @@ body {
 
 .justify-between {
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
 }
 
 @include desktop {
