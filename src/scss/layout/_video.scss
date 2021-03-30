@@ -1,0 +1,22 @@
+.video {
+    &--spacing {
+        padding-bottom: $spacer * 3;
+        @include desktop {
+            padding-bottom: $spacer * 5;
+        }
+    }
+    &__title {
+        font-family: $font-family-pt-serif;
+        font-weight: $font-weight-normal;
+        font-size: $h1-title-font-size-sm;
+        color: $body-title-color;
+        text-align: center;
+        @include desktop {
+            font-size: $h1-title-font-size-lg;
+            text-align: left;
+        }
+    }
+    &__img {
+        width: 100%;
+    }
+}
