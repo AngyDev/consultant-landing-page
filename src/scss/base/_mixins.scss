@@ -15,4 +15,14 @@
     font-style: normal;
     font-size: 18px;
     line-height: 27px;
+    color: $header-text-color;
+}
+
+@mixin fontDMSerif-lg {
+    font-family: 'DM Serif Display';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 46px;
+    line-height: 100%;
+    color: $header-text-color;
 }
