@@ -4,6 +4,12 @@
     }
 }
 
+@mixin desktopNavMenu {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
 @mixin fontPoppins-md {
     font-family: Poppins;
     font-style: normal;
