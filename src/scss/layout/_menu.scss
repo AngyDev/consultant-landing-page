@@ -13,7 +13,7 @@
     .nav-menu {
         width: 100%;
         list-style-type: none;
-        @include fontPoppins-md;
+        @include fontPoppins-sm;
         color: $header-text-color;
         text-align: center;
         padding: 0;
