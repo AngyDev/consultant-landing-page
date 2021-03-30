@@ -1,0 +1,7 @@
+.section__text {
+    text-align: center;
+}
+
+.section__caption {
+    @include fontPoppins-sm;
+}

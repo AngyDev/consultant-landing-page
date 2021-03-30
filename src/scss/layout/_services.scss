@@ -1,0 +1,38 @@
+.services {
+    &__box {
+        gap: $spacer;
+    }
+    &__img {
+        width: 100%;
+    }
+}
+
+.box {
+    width: 228px;
+    &__img {
+        padding-bottom: 21px;
+        width: 65px;
+        height: 65px;
+    }
+    &__title {
+        @include fontPoppins-md;
+        padding-bottom: 12px;
+    }
+    &__caption {
+        @include fontPoppins-sm;
+        font-size: $font-size-base;
+        text-align: center;
+    }
+}
+
+@include desktop {
+    .services--spacer {
+        padding-top: $spacer * 6;
+    }
+    .services__text {
+        text-align: left;
+    }
+    .services__img {
+        width: 66.666667%;
+    }
+}
