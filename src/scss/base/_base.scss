@@ -41,6 +41,14 @@ body {
     flex-direction: row;
 }
 
+.spacing {
+    margin: 0;
+    border: 0;
+    &--sm {
+        padding-bottom: 32px;
+    }
+}
+
 @include desktop {
     .mobile-container {
         padding: 0;
@@ -59,5 +67,8 @@ body {
     }
     .offset-right-1 {
         margin-right: 16.666667%;
+    }
+    .spacing--lg {
+        padding-bottom: 112px;
     }
 }
