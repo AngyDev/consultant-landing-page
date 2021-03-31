@@ -3,12 +3,15 @@
 }
 
 body {
-    //background-image: url('../images/header-bg.png');
     background-color: $body-background-color;
 }
 
 h2 {
-    @include fontPoppins-lg;
+    font-family: $font-family-poppins;
+    font-style: normal;
+    font-size: $font-size-lg;
+    line-height: 39px;
+    color: $header-text-color;
 }
 
 .container {

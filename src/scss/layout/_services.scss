@@ -16,11 +16,9 @@
         height: 65px;
     }
     &__title {
-        @include fontPoppins-md;
         padding-bottom: 12px;
     }
     &__caption {
-        @include fontPoppins-sm;
         font-size: $font-size-base;
         text-align: center;
     }

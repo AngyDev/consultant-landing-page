@@ -5,7 +5,7 @@
     border-style: none;
     cursor: pointer;
     &__text {
-        @include fontPoppins-sm;
+        @extend .font__caption;
         color: #FFFFFF;
     }
     &--width-lg {

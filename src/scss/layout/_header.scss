@@ -17,11 +17,12 @@
 }
 
 .header__title {
-    @include fontDMSerif-lg;
-}
-
-.header__caption {
-    @include fontPoppins-sm;
+    font-family: $font-family-dm-serif;
+    font-weight: $font-weight-normal;
+    font-style: normal;
+    font-size: $h1-font-size;
+    line-height: 100%;
+    color: $header-text-color;
 }
 
 @include desktop {

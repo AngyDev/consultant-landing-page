@@ -9,38 +9,3 @@
         @content;
     }
 }
-
-@mixin fontPoppins-sm {
-    font-family: $font-family-poppins;
-    font-style: normal;
-    font-weight: $font-weight-normal;
-    font-size: $font-size-sm;
-    line-height: 156%;
-    color: $header-text-color;
-}
-
-@mixin fontPoppins-md {
-    font-family: $font-family-poppins;
-    font-style: normal;
-    font-weight: $font-weight-bold;
-    font-size: $title-font-size;
-    line-height: 40px;
-    color: $caption-color;
-}
-
-@mixin fontPoppins-lg {
-    font-family: $font-family-poppins;
-    font-style: normal;
-    font-size: $font-size-lg;
-    line-height: 39px;
-    color: $header-text-color;
-}
-
-@mixin fontDMSerif-lg {
-    font-family: $font-family-dm-serif;
-    font-weight: $font-weight-normal;
-    font-style: normal;
-    font-size: $h1-font-size;
-    line-height: 100%;
-    color: $header-text-color;
-}
