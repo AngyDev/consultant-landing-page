@@ -17,3 +17,20 @@
     font-family: 'PT Serif';
     src: url("/src/fonts/PTSerif-Regular.ttf");
 }
+
+.font__title {
+    font-family: $font-family-poppins;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    font-size: $title-font-size;
+    line-height: 40px;
+    color: $caption-color;
+}
+
+.font__caption {
+    @extend .font__title;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-sm;
+    line-height: 156%;
+    color: $header-text-color;
+}
