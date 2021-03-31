@@ -49,21 +49,28 @@ class Accordion {
     }
 
     /**
-     * Creates the accorsions
+     * Creates the accordions
      */
-    createAccordion(buttonText) {
-        /*<div class="accordion__item">
-            <button class="accordion__btn">What is a professional traffic permit?</button>
-            <div class="accordion__panel">
-                <p>Traffic permits are a requirement for conducting professional traffic</p>
-            </div>
-        </div>*/
+    createAccordion(buttonText, panelText) {
 
         const accordionItem = document.createElement("div");
         accordionItem.setAttribute("class", "accordion__item");
+
         const accordionButton = document.createElement("button");
         accordionButton.setAttribute("class", "accordion__btn");
         accordionButton.innerHTML = buttonText;
+        accordionItem.appendChild(accordionButton);
+
+        const accordionPanel = document.createElement("div");
+        accordionPanel.setAttribute("class", "accordion__panel");
+
+        const panelPText = document.createElement("p");
+        panelPText.innerHTML = panelText;
+
+        accordionPanel.appendChild(panelPText);
+        accordionItem.appendChild(accordionPanel);
+
+        document.getElementById("accordion-left").appendChild(accordionItem);
 
     }
 
@@ -71,9 +78,10 @@ class Accordion {
      * Shows the accordions
      */
     showData() {
-        this.data.forEach(item => {});
+        this.data.forEach(item => {
+            this.createAccordion(item.question, item.answer);
+        });
     }
 }
-console.log("Before new Accordion");
+
 const accordion = new Accordion();
-console.log("After new Accordion");
