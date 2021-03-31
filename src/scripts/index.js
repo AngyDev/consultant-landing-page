@@ -1,5 +1,5 @@
 import '../scss/index.scss';
-import './accordion';
+//import './accordion';
 
 async function getData() {
     try {
