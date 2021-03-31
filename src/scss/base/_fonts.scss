@@ -34,3 +34,17 @@
     line-height: 156%;
     color: $header-text-color;
 }
+
+.font__title-pt-serif {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-normal;
+    font-size: $h1-title-font-size-sm;
+    color: $body-title-color;
+}
+
+.font__title-pt-serif-lg {
+    @extend .font__title-pt-serif;
+    @include desktop {
+        font-size: $h1-title-font-size-lg;
+    }
+}
