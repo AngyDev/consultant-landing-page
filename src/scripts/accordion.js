@@ -2,15 +2,16 @@ class Accordion {
 
     constructor() {
         this.data = [];
-        this.getData();
+        this.getData(1);
     }
 
     /**
      * Gets data from Mock API call
+     * @param {Number} page The number of the page to call
      */
-    async getData() {
+    async getData(page) {
         try {
-            const response = await fetch('http://605a21feb11aba001745da26.mockapi.io/api/v1/questions');
+            const response = await fetch('http://605a21feb11aba001745da26.mockapi.io/api/v1/questions?page=' + page + '&limit=13');
 
             if (response.status != 200) {
                 var responseError = 'Something is wrong! Status Code: ' + response.status;
@@ -35,6 +36,9 @@ class Accordion {
 
     /**
      * Creates the accordions
+     * @param {String} buttonText 
+     * @param {String} panelText 
+     * @returns accordion html element
      */
     createAccordion(buttonText, panelText) {
 
@@ -57,7 +61,7 @@ class Accordion {
         accordionPanel.appendChild(panelPText);
         accordionItem.appendChild(accordionPanel);
 
-        document.getElementById("accordion-left").appendChild(accordionItem);
+        return accordionItem;
     }
 
     /**
@@ -85,11 +89,34 @@ class Accordion {
      * Shows the accordions
      */
     showData() {
-        this.data.forEach(item => {
-            this.createAccordion(item.question, item.answer);
+        this.data.forEach((item, index) => {
+            const accordionBox = this.createAccordion(item.question, item.answer);
+
+            if (index <= 7) {
+                document.getElementById("accordion-left").appendChild(accordionBox);
+            } else {
+                document.getElementById("accordion-right").appendChild(accordionBox);
+            }
         });
         this.clickButton();
+    }
+
+    /**
+     * Reset the Accordion Item to set new data
+     */
+    reset() {
+        const accLeft = document.getElementById("accordion-left");
+        accLeft.innerHTML = "";
+        const accRight = document.getElementById("accordion-right");
+        accRight.innerHTML = "";
     }
 }
 
 const accordion = new Accordion();
+
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+loadMoreBtn.addEventListener('click', () => {
+    accordion.reset();
+    accordion.getData(2);
+});
