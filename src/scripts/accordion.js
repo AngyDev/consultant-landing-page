@@ -1,20 +1,5 @@
-const accordionButton = document.getElementsByClassName("accordion__btn");
-
-for (var i = 0; i < accordionButton.length; i++) {
-    accordionButton[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
-
 class Accordion {
+
     constructor() {
         this.data = [];
         this.getData();
@@ -36,7 +21,7 @@ class Accordion {
             console.log(this.data);
 
             if (this.data.length > 0) {
-                //this.showData();
+                this.showData();
             } else {
                 let div = document.createElement("div");
                 div.innerHTML = "The response is empty";
@@ -54,10 +39,12 @@ class Accordion {
     createAccordion(buttonText, panelText) {
 
         const accordionItem = document.createElement("div");
+        accordionItem.setAttribute("name", "acc-item");
         accordionItem.setAttribute("class", "accordion__item");
 
         const accordionButton = document.createElement("button");
         accordionButton.setAttribute("class", "accordion__btn");
+        accordionButton.setAttribute("name", "acc-btn");
         accordionButton.innerHTML = buttonText;
         accordionItem.appendChild(accordionButton);
 
@@ -71,8 +58,28 @@ class Accordion {
         accordionItem.appendChild(accordionPanel);
 
         document.getElementById("accordion-left").appendChild(accordionItem);
-
     }
+
+    /**
+     * After the creation of the accordion define what happens when the button is pressed
+     */
+    clickButton() {
+        const accordionBtn = document.getElementsByName("acc-btn");
+
+        accordionBtn.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.target.classList.toggle("active");
+
+                var panel = e.target.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            })
+        })
+    }
+
 
     /**
      * Shows the accordions
@@ -81,6 +88,7 @@ class Accordion {
         this.data.forEach(item => {
             this.createAccordion(item.question, item.answer);
         });
+        this.clickButton();
     }
 }
 
