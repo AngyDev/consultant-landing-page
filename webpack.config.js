@@ -66,7 +66,8 @@ module.exports = {
             filename: "bundle.css"
         }),
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './index.html',
+            inject: 'body'
         }),
         // Add this plugin to create a copy of the images folder from src to dist
         new CopyWebpackPlugin({
