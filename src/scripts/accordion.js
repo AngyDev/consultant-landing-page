@@ -19,7 +19,6 @@ class Accordion {
             }
 
             this.data = await response.json();
-            console.log(this.data);
 
             if (this.data.length > 0) {
                 this.showData();
@@ -29,8 +28,9 @@ class Accordion {
 
                 document.getElementById("accordion-left").appendChild(div);
             }
-        } catch (error) {
 
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -98,6 +98,7 @@ class Accordion {
                 document.getElementById("accordion-right").appendChild(accordionBox);
             }
         });
+
         this.clickButton();
     }
 
@@ -115,8 +116,20 @@ class Accordion {
 const accordion = new Accordion();
 
 const loadMoreBtn = document.getElementById("loadMoreBtn");
+const loadLessBtn = document.getElementById("loadLessBtn");
 
 loadMoreBtn.addEventListener('click', () => {
     accordion.reset();
     accordion.getData(2);
+
+    loadLessBtn.style.display = "unset";
+    loadMoreBtn.style.display = "none";
+});
+
+loadLessBtn.addEventListener('click', () => {
+    accordion.reset();
+    accordion.getData(1);
+
+    loadLessBtn.style.display = "none";
+    loadMoreBtn.style.display = "unset";
 });
