@@ -1,3 +1,7 @@
+.faq__img {
+    display: none;
+}
+
 @include desktop {
     .faq {
         padding-top: 76px;
@@ -5,6 +9,9 @@
             background: url(../images/faq-ellipse.png);
             background-repeat: no-repeat;
             background-position: right 76px;
+        }
+        &__img {
+            display: unset;
         }
     }
 }
