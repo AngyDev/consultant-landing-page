@@ -33,5 +33,10 @@
         &__col {
             width: 45%;
         }
+        &__img {
+            &--woman {
+                margin-top: -70px;
+            }
+        }
     }
 }
