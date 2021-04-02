@@ -3,15 +3,23 @@
         text-align: center;
     }
     &__box {
-        padding: 10px;
-        width: 442px;
-        height: 545px;
+        padding: 10%;
         box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
         background-color: $body-background-color;
         border-radius: 10px;
     }
     &__img {
-        padding: 10%;
+        width: 100%;
+    }
+    &__text {
+        padding-top: 33px;
+        text-align: center;
+    }
+    &__btn {
+        margin-top: -24px;
+        &--red {
+            background: $button-secondary-color;
+        }
     }
 }
 
@@ -21,6 +29,9 @@
             background: url(../images/feature-ellipses.png);
             background-repeat: no-repeat;
             background-position: left 200px;
+        }
+        &__col {
+            width: 45%;
         }
     }
 }
