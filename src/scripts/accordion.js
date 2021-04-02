@@ -11,7 +11,7 @@ class Accordion {
      */
     async getData(page) {
         try {
-            const response = await fetch('http://605a21feb11aba001745da26.mockapi.io/api/v1/questions?page=' + page + '&limit=13');
+            const response = await fetch('https://605a21feb11aba001745da26.mockapi.io/api/v1/questions?page=' + page + '&limit=13');
 
             if (response.status != 200) {
                 var responseError = 'Something is wrong! Status Code: ' + response.status;
