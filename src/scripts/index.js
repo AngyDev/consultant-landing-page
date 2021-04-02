@@ -1,5 +1,6 @@
 import '../scss/index.scss';
 import './accordion';
+import './slideshow';
 
 /*async function getData() {
     try {
