@@ -15,7 +15,7 @@ class Accordion {
 
             if (response.status != 200) {
                 var responseError = 'Something is wrong! Status Code: ' + response.status;
-                //this.showError(responseError);
+                this.showError(responseError);
             }
 
             this.data = await response.json();
@@ -23,10 +23,7 @@ class Accordion {
             if (this.data.length > 0) {
                 this.showData();
             } else {
-                let div = document.createElement("div");
-                div.innerHTML = "The response is empty";
-
-                document.getElementById("accordion-left").appendChild(div);
+                this.showError("The response is empty");
             }
 
         } catch (error) {
@@ -100,6 +97,17 @@ class Accordion {
         });
 
         this.clickButton();
+    }
+
+    /**
+     * Show the error on the page
+     * @param {String} error 
+     */
+    showError(error) {
+        const div = document.createElement("div");
+        div.innerHTML = error;
+
+        document.getElementById("accordion-left").appendChild(div);
     }
 
     /**
