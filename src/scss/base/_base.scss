@@ -55,6 +55,9 @@ h2 {
 .spacing {
     margin: 0;
     border: 0;
+    &--xs {
+        padding-bottom: $spacer;
+    }
     &--sm {
         padding-bottom: $spacer * 2;
     }
