@@ -1,0 +1,67 @@
+.login {
+    &__title {
+        text-align: center;
+    }
+    &__container {
+        background: #ffffff;
+        box-shadow: 0px 20px 40px rgba(149, 149, 201, 0.4);
+        border-radius: 10px;
+        margin: auto;
+    }
+    &__box {
+        width: 75%;
+        margin: 10%;
+    }
+    &__font {
+        @extend .font__caption;
+        font-size: $font-size-xs;
+    }
+}
+
+.form {
+    &__font {
+        @extend .font__caption;
+        font-size: $font-size-base;
+    }
+    &__label {
+        padding-bottom: 10px;
+    }
+    &__input {
+        height: 30px;
+        background: #FFFFFF;
+        border: 1px solid $login-input-border-color;
+        box-sizing: border-box;
+        border-radius: 5px;
+        outline: none;
+        font-size: $font-size-xs;
+        &:focus {
+            border: 2px solid $login-input-border-color;
+            box-shadow: 0px 20px 40px rgba(149, 149, 201, 0.2);
+        }
+    }
+}
+
+.signup__link {
+    color: $button-secondary-color;
+    cursor: pointer;
+}
+
+@include desktop {
+    .login {
+        &__title {
+            text-align: unset;
+        }
+        &__font {
+            font-size: $font-size-sm;
+        }
+    }
+    .form {
+        &__font {
+            font-size: $font-size-sm;
+        }
+        &__input {
+            height: 60px;
+            font-size: $font-size-sm;
+        }
+    }
+}
