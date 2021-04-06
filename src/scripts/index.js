@@ -1,6 +1,8 @@
 import '../scss/index.scss';
 import './accordion';
 import './slideshow';
+import './form';
+import './validation';
 
 /*async function getData() {
     try {
