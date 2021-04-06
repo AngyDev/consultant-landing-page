@@ -192,16 +192,21 @@
             <hr class="spacing spacing--sm">
             <div class="login__container flex flex-col col-3">
                 <div class="login__box">
+
                     <form class="login__form flex flex-col" action="">
                         <label class="form__font form__label" for="name">Name</label>
-                        <input class="form__input" type="text" placeholder="Your Name">
+                        <input id="name" class="form__input" type="text" placeholder="Your Name">
+                        <span id="error__name" class="form__font error"></span>
                         <hr class="spacing spacing--sm">
+
                         <label class="form__font form__label" for="password">Password</label>
-                        <input class="form__input" type="password" placeholder="Your Password">
+                        <input id="password" class="form__input" type="password" placeholder="Your Password">
+                        <span id="error__password" class="form__font error"></span>
                         <hr class="spacing spacing--sm">
-                        <button class="btn btn--width-md form__btn"><span class="btn__text">SIGN IN</span></button>
+                        <button class="btn btn--width-md form__btn" id="signIn" type="button"><span class="btn__text">SIGN IN</span></button>
                         <hr class="spacing spacing--xs">
                     </form>
+
                     <div class="login__signup">
                         <p class="login__font">Don't have an account? <a class="signup__link">Sign up here</a></p>
                     </div>
