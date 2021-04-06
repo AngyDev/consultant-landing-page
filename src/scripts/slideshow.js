@@ -18,7 +18,6 @@ class Slideshow {
             }
 
             this.data = await response.json();
-            console.log(this.data);
 
             if (this.data.length > 0) {
                 this.showData();
@@ -118,8 +117,6 @@ class Slideshow {
      */
     showSlides(n) {
         const slides = document.getElementsByClassName("slideshow__slide");
-
-        console.log(slides);
 
         if (n > slides.length) {
             this.slideIndex = 1
