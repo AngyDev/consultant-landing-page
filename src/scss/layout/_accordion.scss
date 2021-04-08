@@ -25,7 +25,7 @@
         justify-content: space-between;
         align-items: center;
         &::after {
-            content: url("../images/faq-chevron-down-fill-right.svg");
+            content: url("../images/faq/faq-chevron-down-fill-right.svg");
         }
     }
     &__panel {
@@ -39,5 +39,5 @@
 }
 
 .accordion__btn.active::after {
-    content: url("../images/faq-chevron-down-fill.svg");
+    content: url("../images/faq/faq-chevron-down-fill.svg");
 }

@@ -82,7 +82,7 @@ class Slideshow {
         profileText.appendChild(divProfile);
 
         const ratingStar = document.createElement("img");
-        ratingStar.setAttribute("src", "./images/slideshow-stars.png");
+        ratingStar.setAttribute("src", "./images/slideshow/slideshow-stars.png");
         ratingStar.setAttribute("alt", "Stars Image");
         divProfile.appendChild(ratingStar);
 
