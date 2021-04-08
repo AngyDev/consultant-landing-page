@@ -23,7 +23,6 @@ class Form {
             }
 
             this.data = await response.json();
-            console.log(this.data);
 
             this.showMessage("The Login is correct");
 
