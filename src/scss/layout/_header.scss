@@ -25,6 +25,42 @@
     color: $header-text-color;
 }
 
+.topnav {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.links {
+    flex-direction: column;
+    display: none;
+}
+
+.topnav a {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    &:hover {
+        color: $black;
+    }
+}
+
+.topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.ul__list {
+    flex-direction: column;
+    list-style: none;
+    padding-left: 0;
+}
+
 @include desktop {
     .header__bg {
         background-image: url(../images/header-bg.png);
@@ -37,11 +73,17 @@
     .header__box {
         align-items: unset;
     }
-}
-
-@include desktopNavMenu {
-    .header__nav {
-        display: unset;
-        padding-left: 5%;
+    .topnav {
+        flex-direction: row;
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+    }
+    #btn-burger {
+        display: none;
+    }
+    .ul__list {
+        flex-direction: row;
     }
 }
