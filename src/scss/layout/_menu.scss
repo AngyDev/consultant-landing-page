@@ -1,14 +1,3 @@
-.menu-btn {
-    align-items: flex-end;
-    padding-right: 20px;
-    &__burger {
-        margin-bottom: 5px;
-        width: 30px;
-        height: 3px;
-        background: $logo-text-color;
-    }
-}
-
 @include desktop {
     .nav-menu {
         width: 100%;
@@ -16,11 +5,5 @@
         color: $header-text-color;
         text-align: center;
         padding: 0;
-    }
-}
-
-@include desktopNavMenu {
-    .menu-btn {
-        display: none;
     }
 }
