@@ -2,7 +2,7 @@
 
 ![webpack-current](https://img.shields.io/badge/webpack-5.28.0-green?logo=webpack)
 ![sass](https://img.shields.io/badge/sass-1.32.8-green?logo=sass)
-![Website monip.org](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)
+![Website](https://img.shields.io/badge/web--site-up-green)
 ![mock-api](https://img.shields.io/badge/mock--api-up-green)
 
 ## Demo
