@@ -1,6 +1,6 @@
 import Validation from './validation';
 
-describe("Validation of input login form", () => {
+describe("Validation of input form", () => {
     it("Input is not valid", () => {
 
         document.body.innerHTML = `
