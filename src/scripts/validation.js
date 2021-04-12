@@ -2,15 +2,21 @@ export default class Validation {
 
     constructor() {}
 
-    inputValidation(inputName) {
+    /**
+     * Check if the input is empty or null
+     * @param {HTMLElement} inputField the input to validate
+     * @param {HTMLElement} errorInput the error string of the input
+     * @returns boolean
+     */
+    inputValidation(inputField, errorInput) {
         let valid = true;
-        const errorName = document.getElementById('error__' + inputName.id);
+        //const errorInput = document.getElementById('error-' + inputField.id);
 
-        if (inputName.value === "" || inputName.value === null) {
+        if (inputField.value === "" || inputField.value === null) {
             valid = false;
-            errorName.innerHTML = "Enter your " + inputName.id;
+            errorInput.innerHTML = "Enter your " + inputField.id;
         }
+
         return valid;
     }
-
 }
