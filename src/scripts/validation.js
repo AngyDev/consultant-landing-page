@@ -9,14 +9,14 @@ export default class Validation {
      * @returns boolean
      */
     inputValidation(inputField, errorInput) {
-        let valid = true;
+
         //const errorInput = document.getElementById('error-' + inputField.id);
 
         if (inputField.value === "" || inputField.value === null) {
-            valid = false;
             errorInput.innerHTML = "Enter your " + inputField.id;
+            return false;
         }
 
-        return valid;
+        return true;
     }
 }
