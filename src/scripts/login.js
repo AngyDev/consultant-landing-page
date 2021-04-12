@@ -1,6 +1,7 @@
 import Validation from './validation';
 
-class Form {
+class Login {
+
     constructor() {
         this.data = {};
     }
@@ -44,15 +45,19 @@ const nameField = document.getElementById("name");
 const password = document.getElementById("password");
 const signIn = document.getElementById("signIn");
 const error = document.querySelectorAll('.error');
+const errorName = document.getElementById("error-name");
+const errorPassword = document.getElementById("error-password");
+
+//const errorInput = document.getElementById('error-' + inputName.id);
 
 const validation = new Validation();
 
-const form = new Form();
+const login = new Login();
 
 signIn.addEventListener('click', () => {
 
-    const validName = validation.inputValidation(nameField);
-    const validPassword = validation.inputValidation(password);
+    const validName = validation.inputValidation(nameField, errorName);
+    const validPassword = validation.inputValidation(password, errorPassword);
 
     if (validName && validPassword) {
         // not display the error message
@@ -61,7 +66,7 @@ signIn.addEventListener('click', () => {
                 element.innerHTML = "";
             })
         }
-        form.getUser();
+        login.getUser();
         nameField.value = "";
         password.value = "";
     }
