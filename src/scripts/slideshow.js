@@ -104,11 +104,9 @@ class Slideshow {
             const slideshowItem = this.createSlideshowItem(item);
 
             document.getElementById("slideshow-wrapper").appendChild(slideshowItem);
-
         });
 
         this.showSlides(this.slideIndex);
-
     }
 
     /**
