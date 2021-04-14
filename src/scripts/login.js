@@ -1,6 +1,7 @@
+import fetch from 'cross-fetch';
 import Validation from './validation';
 
-class Login {
+export default class Login {
 
     constructor() {
         this.data = {};
@@ -10,22 +11,20 @@ class Login {
      * Get the user
      * @returns One user
      */
-    async getUser() {
+    async getUser(id, username) {
         try {
-            // Create a random id to have an error for user not found
-            const id = Math.floor(Math.random() * 3);
-
             const response = await fetch('https://605a21feb11aba001745da26.mockapi.io/api/v1/users/' + id);
 
             if (response.status != 200) {
-                var responseError = 'The User is not registered';
-                this.showMessage(responseError);
+                this.showMessage("The User " + username + " is not registered");
                 return;
             }
 
             this.data = await response.json();
 
-            this.showMessage("The Login is correct");
+            this.showMessage("The Login is correct. Welcome " + username + "!!");
+
+            return username;
 
         } catch (error) {
             console.log(error);
@@ -39,6 +38,7 @@ class Login {
     showMessage(message) {
         alert(message);
     }
+
 }
 
 const nameField = document.getElementById("name");
@@ -48,13 +48,11 @@ const error = document.querySelectorAll('.error');
 const errorName = document.getElementById("error-name");
 const errorPassword = document.getElementById("error-password");
 
-//const errorInput = document.getElementById('error-' + inputName.id);
-
 const validation = new Validation();
 
 const login = new Login();
 
-signIn.addEventListener('click', () => {
+signIn && signIn.addEventListener('click', () => {
 
     const validName = validation.inputValidation(nameField, errorName);
     const validPassword = validation.inputValidation(password, errorPassword);
@@ -64,11 +62,13 @@ signIn.addEventListener('click', () => {
         if (error != undefined) {
             error.forEach(element => {
                 element.innerHTML = "";
-            })
+            });
         }
-        login.getUser();
+        // Create a random id to have an error for user not found
+        const id = Math.floor(Math.random() * 3);
+        login.getUser(id, nameField.value);
+
         nameField.value = "";
         password.value = "";
     }
-
 });
