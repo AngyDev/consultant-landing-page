@@ -65,6 +65,7 @@ class Accordion {
      * After the creation of the accordion define what happens when the button is pressed
      */
     clickButton() {
+
         const accordionBtn = document.getElementsByName("acc-btn");
 
         accordionBtn.forEach(button => {
@@ -80,7 +81,6 @@ class Accordion {
             })
         })
     }
-
 
     /**
      * Shows the accordions
