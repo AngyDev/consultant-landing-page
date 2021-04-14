@@ -72,7 +72,7 @@ class Accordion {
             button.addEventListener('click', (e) => {
                 e.target.classList.toggle("active");
 
-                var panel = e.target.nextElementSibling;
+                const panel = e.target.nextElementSibling;
                 if (panel.style.display === "block") {
                     panel.style.display = "none";
                 } else {
