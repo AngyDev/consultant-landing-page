@@ -4,16 +4,14 @@ export default class Validation {
 
     /**
      * Check if the input is empty or null
-     * @param {HTMLElement} inputField the input to validate
+     * @param {value} inputValue the value of the input
      * @param {HTMLElement} errorInput the error string of the input
      * @returns boolean
      */
-    inputValidation(inputField, errorInput) {
+    inputValidation(inputValue, errorInput) {
 
-        //const errorInput = document.getElementById('error-' + inputField.id);
-
-        if (inputField.value === "" || inputField.value === null) {
-            errorInput.innerHTML = "Enter your " + inputField.id;
+        if (inputValue === "" || inputValue === null) {
+            errorInput.innerHTML = "The field is required";
             return false;
         }
 
