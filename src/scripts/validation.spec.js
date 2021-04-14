@@ -11,7 +11,7 @@ describe("Validation of input form", () => {
 
         const nameField = document.getElementById("name");
         const errorName = document.getElementById("error-name");
-        const valid = validation.inputValidation(nameField, errorName);
+        const valid = validation.inputValidation(nameField.value, errorName);
 
         expect(valid).toBeFalsy();
     });
@@ -27,7 +27,7 @@ describe("Validation of input form", () => {
         const nameField = document.getElementById("name");
         nameField.value = "Angela";
         const errorName = document.getElementById("error-name");
-        const valid = validation.inputValidation(nameField, errorName);
+        const valid = validation.inputValidation(nameField.value, errorName);
 
         expect(valid).toBeTruthy();
     })
