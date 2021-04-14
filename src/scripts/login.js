@@ -39,36 +39,48 @@ export default class Login {
         alert(message);
     }
 
-}
+    /**
+     * Checks if the input are valid and login
+     * @param {HTMLElement} nameInput The name input
+     * @param {HTMLElement} password The password input
+     * @param {Array} errors Array of error span
+     * @returns 
+     */
+    checkInputAndLogin(nameInput, password, errors) {
+        // validation of the input
+        if (this.checkInput(nameInput.value, password.value, errors)) {
+            // not display the error message
+            if (errors != undefined) {
+                errors.forEach(element => {
+                    element.innerHTML = "";
+                });
+            }
+            // Create a random id to have an error for user not found
+            const id = Math.floor(Math.random() * 3);
+            this.getUser(id, nameInput.value);
 
-const nameField = document.getElementById("name");
-const password = document.getElementById("password");
-const signIn = document.getElementById("signIn");
-const error = document.querySelectorAll('.error');
-const errorName = document.getElementById("error-name");
-const errorPassword = document.getElementById("error-password");
-
-const validation = new Validation();
-
-const login = new Login();
-
-signIn && signIn.addEventListener('click', () => {
-
-    const validName = validation.inputValidation(nameField, errorName);
-    const validPassword = validation.inputValidation(password, errorPassword);
-
-    if (validName && validPassword) {
-        // not display the error message
-        if (error != undefined) {
-            error.forEach(element => {
-                element.innerHTML = "";
-            });
+            nameInput.value = "";
+            password.value = "";
         }
-        // Create a random id to have an error for user not found
-        const id = Math.floor(Math.random() * 3);
-        login.getUser(id, nameField.value);
-
-        nameField.value = "";
-        password.value = "";
     }
-});
+
+    /**
+     * Checks if the inputs are valid
+     * @param {String} nameValue The name of the user
+     * @param {String} passwordValue The password of the user
+     * @param {Array} errors The array of errors
+     * @returns 
+     */
+    checkInput(nameValue, passwordValue, errors) {
+        const validation = new Validation();
+
+        const validName = validation.inputValidation(nameValue, errors[0]);
+        const validPassword = validation.inputValidation(passwordValue, errors[1]);
+
+        if (validName && validPassword) {
+            return true;
+        }
+
+        return false;
+    }
+}
