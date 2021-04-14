@@ -1,3 +1,11 @@
+#btn-contact {
+    display: none;
+}
+
+.active-menu {
+    display: none;
+}
+
 @include desktop {
     .nav-menu {
         width: 100%;
@@ -5,5 +13,14 @@
         color: $header-text-color;
         text-align: center;
         padding: 0;
+    }
+    #btn-contact-mobile {
+        display: none;
+    }
+    #btn-contact {
+        display: unset;
+    }
+    .active-menu {
+        display: unset;
     }
 }
