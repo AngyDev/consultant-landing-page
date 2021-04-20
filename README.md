@@ -15,7 +15,7 @@ https://consultant-landing-pag.netlify.app
 ## Table of Contents
 * [Demo](#demo)
 * [General info](#general-info)
-* [Feaures](#features)
+* [Features](#features)
 * [Requirements](#requirements)
 * [Setup](#setup)
 
